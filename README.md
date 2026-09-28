@@ -3,7 +3,7 @@ My first project
 # Software Design: Campus Fitness & Activity Tracker
 
 **Course:** Software Design & Logic  
-**Author:** [Student Name]  
+**Author:** FELICIA BENSON
 **Deliverable:** Algorithm Design (IPO, Flowchart, Pseudocode)  
 
 ---
@@ -23,5 +23,122 @@ My first project
 | Input | Processing | Output |
 | :--- | :--- | :--- |
 | • `main_choice` (Integer: 1–4)<br>• `sub_choice` (Integer: 1–3)<br>• `duration` (Real / Integer: $\ge 0$) | 1. Initialize `total_cardio = 0`, `total_strength = 0`.<br>2. Loop main menu display until user enters `4`.<br>3. Validate that `main_choice` is between 1 and 4.<br>4. If `1` (Cardio) or `2` (Strength):<br>&emsp;a. Display respective submenu.<br>&emsp;b. Validate `sub_choice` is between 1 and 3.<br>&emsp;c. Prompt for duration; loop until `duration >= 0`.<br>&emsp;d. Map choice to activity name.<br>&emsp;e. Add `duration` to running total.<br>5. If `3` (Summary):<br>&emsp;a. Calculate `total_active = total_cardio + total_strength`.<br>&emsp;b. Determine goal achievement status ($>= 120$ min).<br>&emsp;c. Display formatted summary report.<br>6. If `4` (Exit): Display exit farewell and terminate. | • Invalid input warning messages<br>• Success confirmation of logged minutes and activity name<br>• Formatted Activity Summary:<br>&emsp;- Total Cardio Minutes<br>&emsp;- Total Strength Minutes<br>&emsp;- Total Active Minutes<br>&emsp;- Weekly Goal Status Message<br>• Exit farewell message |
+
+## Pseudocode
+
+
+```
+MODULE MAIN()
+   DECLARE Integer total cardio = 0
+   Declare Integer total_Strength = 0
+   DECLARE Integer total_Source = 0
+   DECLARE String main_choice = " "
+   DECLARE String sub_choice = " "
+   DECLARE Real duration = 0.0
+   DECLARE String activity_name = " "
+
+DISPLAY "============================="
+DISPLAY  " CAMPUS FITNESS TRACKER    "
+DISPLAY   "============================"
+
+WHILE True
+// Step 1: Main Menu & Input Validation
+DISPLAY "===MAIN MENU==="
+--- MAIN MENU ---
+1. Log Cardio Workout
+2. Log Strength Workout
+3. View Activity Summary
+4. Exit
+Enter your choice (1-4):"
+INPUT main_choice
+
+ WHILE main_choice != 1 AND main_choice != 2 AND main_choice != 3 AND main_choice != 4
+DISPLAY "Invalid. Please enter 1, 2, or 3. Try Again!
+INPUT main_choice
+END WHILE
+
+//Step 2: Route Submenus and Actions
+IF main_choice == 1 THEN
+DISPLAY "---CARDIO MENU ---"
+DISPLAY "1. Running / Jogging"
+DISPLAY "2. Cycling"
+DISLAY "3. Swimming"
+DISPLAY "Enter cardio activity (1-3):"
+INPUT sub_choice
+
+WHILE sub_choice !=1 AND sub_choice != 2 AND sub_choice != 3
+DISPLAY "Invalid. Please enter 1, 2, or 3. Try Again!"
+INPUT sub_choice
+END WHILE
+
+IF sub_choice == 1 THEN
+   activity name ="Running / Jogging"
+ELSE IF sub_choice ==2 THEN
+    activity_name = "Cycling"
+ELSE
+   activity_name = "Swimming"
+END IF
+
+DISPLAY "Enter duration in minutes:"
+INPUT duration
+WHILE duration < 0
+      DISPLAY "Invalid. Please enter minutes >= 0:"
+      INPUT duration
+END WHILE
+
+total_cardio = total_cardio + duration
+DISPLAY "Successfully added ", duration, "minutes for "activity_name, "."
+
+ELSE IF main_choice == 2 THEN
+DISPLAY "--- STRENGTH MENU ---"
+DISPLAY "1. Upper Body"
+DISPLAY "2. Lower Body"
+DISPLAY "3. Core & Flexibility"
+DISPLAY "Enter strength category (1-3):"
+
+WHILE sub_choice !=1 AND sub_choice != 2 AND sub_choice != 3
+DISPLAY "Invalid. Please enter 1, 2, or 3. Try Again!"
+INPUT sub_choice
+END WHILE
+
+total_strength = total strength + duration
+DISPLAY "Successfully added ", duration, "minutes for ", activity_name, "."
+
+ELSE IF main_choice ==3 THEN
+total_active = total_cardio + total_strength
+
+DISPLAY "=========================================="
+DISPLAY"       ACTIVITY SUMMARY              "
+DISPLAY"=========================================="
+DISPLAY "Total Cardio:    75 minutes"
+DISPLAY "Total Strength:  60 minutes"
+DISPLAY "Total Active:    135 minutes"
+DISPLAY "Status: Goal achieved! You exceeded 120 weekly active minutes."
+==========================================
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
