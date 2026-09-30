@@ -101,6 +101,21 @@ DISPLAY "Invalid. Please enter 1, 2, or 3. Try Again!"
 INPUT sub_choice
 END WHILE
 
+IF sub_choice ==1 THEN
+   activity_name = "Upper Body"
+ELSE IF sub_choice == 2 THEN
+   activity_name = "Lower Body"
+ELSE
+   activity_name = "Core & Flexibility"
+END IF
+
+DISPLAY "Enyer duration in minutes:"
+INPUT duration
+WHILE duration < 0
+     DISPLAY "Invaild. Please enter minutes >= 0:"
+INPUT duration
+END WHILE
+
 total_strength = total strength + duration
 DISPLAY "Successfully added ", duration, "minutes for ", activity_name, "."
 
@@ -110,13 +125,26 @@ total_active = total_cardio + total_strength
 DISPLAY "=========================================="
 DISPLAY"       ACTIVITY SUMMARY              "
 DISPLAY"=========================================="
-DISPLAY "Total Cardio:    75 minutes"
-DISPLAY "Total Strength:  60 minutes"
-DISPLAY "Total Active:    135 minutes"
-DISPLAY "Status: Goal achieved! You exceeded 120 weekly active minutes."
+DISPLAY "Total Cardio:" , total_cardio 
+DISPLAY "Total Strength:", total_strength
+DISPLAY "Total Active:", total_active
 
-==========================================
-ELSE IF 
+IF total_active >= 120 THEN
+DISPLAY "Status: Goal achieved! You exceeded 120 weekly active minutes."
+ELSE IF total_active = 0 THEN
+DISPLAY "Status: Keep Going! ", (120 - total_active), "more minutes needed to hit"
+DISPLAY "your weekly target."
+ELSE
+DISPLAY "Status: No workouts logged yet."
+END IF 
+
+DISPLAY "=========================================="
+ELSE IF main_choice == 4 THEN
+       DISPLAY "Thank you for using Campus Fitness Tracker. Stay Active!"
+     BREAK
+  END IF
+ END WHILE
+END MODULE
 
 ```
 
