@@ -114,6 +114,7 @@ DISPLAY "Total Cardio:    75 minutes"
 DISPLAY "Total Strength:  60 minutes"
 DISPLAY "Total Active:    135 minutes"
 DISPLAY "Status: Goal achieved! You exceeded 120 weekly active minutes."
+
 ==========================================
 ELSE IF 
 
